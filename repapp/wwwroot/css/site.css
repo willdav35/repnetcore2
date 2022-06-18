@@ -1,71 +1,87 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+﻿header{
+    background-color:grey;
 }
 
-/* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
+
+
+/*body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+menu li{
+    display:inline;
 }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+menu li::after {
+    content: ' |';
+
+}
+menu li:last-of-type::after {
+    content: "";
+
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  font-size: 14px;
+input[type=submit] {
+  width: auto;
 }
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
+
+input, textarea {
+  font-size: 18px;
+  width: 200px;
+}
+
+
+label {
+  font-size: 16px;
+}
+
+#theForm {
+  background-color: #d0d0d0;
+}
+
+  #theForm input[type=submit] {
+    background-color: green;
+    color: white;
   }
+
+ul.products-props {
+  font-size: small;
 }
 
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+  ul.products-props li {
+    list-style-type: none;
+  }
+
+.product-info {
+  border: 1px solid gray;
+  display: inline-block;
+  padding: 8px 2px;
+  margin: 2px;
+  width: 450px;
+  background-color: lightgray;
+  border-radius: 5px;
 }
 
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+  .product-info img {
+    margin: 3px;
+    float: left;
+    border: 1px solid black;
+    max-width: 150px;
+  }
+
+#login-block {
+  float: right;
 }
 
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
-}
+  #login-block .toggle-item {
+    text-align: right;
+  }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
-}
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
-}
+  #login-block .popup-form {
+    display: none;
+    background-color: grey;
+    border: solid 1px black;
+    padding: 2px;
+    font-size: 10px;
+  }
+    */

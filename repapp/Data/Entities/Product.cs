@@ -8,10 +8,7 @@ namespace repapp.Data.Entities
     public class Product
     {
     public int Id { get; set; }
-
-        public String Name  { get;set;}
-
-   /* public  string Category { get; set; }
+    public string Category { get; set; }
     public string Size { get; set; }
     public decimal Price { get; set; }
     public string Title { get; set; }
@@ -22,6 +19,6 @@ namespace repapp.Data.Entities
     public DateTime ArtistBirthDate { get; set; }
     public DateTime ArtistDeathDate { get; set; }
     public string ArtistNationality { get; set; }
-   */
+   
     }
 }

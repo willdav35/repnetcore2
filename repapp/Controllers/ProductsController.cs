@@ -10,31 +10,34 @@ using repapp.Data.Entities;
 
 namespace repapp.Controllers
 {
+
+    //https://exceptionnotfound.net/asp-net-core-demystified-action-results/
+
     [Route("api/[Controller]")]
-    [ApiController]
-    [Produces("application/json")]
     public class ProductsController : ControllerBase
     {
-       // private readonly IProductsRepository _repository;
+        // private readonly IProductsRepository _repository;
         private readonly ILogger<ProductsController> _logger;
-        private readonly DataDbContext _context;
-        private readonly IProductsRepository _productsRepository;
 
-        public ProductsController(IProductsRepository res, DataDbContext context, ILogger<ProductsController> logger)
+        private readonly IProductRepository _res;
+
+        public ProductsController(IProductRepository res, ILogger<ProductsController> logger)
         {
-              _context = context;
+
             _logger = logger;
-            _productsRepository = res;
+            _res = res;
         }
 
+       
+        [ProducesResponseType(200)]
+        [ProducesResponseType(400)]
         [HttpGet]
-     [ProducesResponseType(200)]
-     [ProducesResponseType(400)]
-    public async Task<ActionResult<IEnumerable<Product>>> Get()
-    {
+        public  IActionResult  Get()
+        {
+
             try
             {
-                return await _context.Products.ToListAsync();
+                return Ok(_res.GetAllProducts());
             }
 
             catch (Exception ex)
@@ -42,29 +45,15 @@ namespace repapp.Controllers
                 _logger.LogError($"Failed to get products: {ex}");
                 return BadRequest("failed to get products");
             }
-    }
-  
-
-
-    [HttpGet("{Id}")]
-    
-    public async Task<ActionResult<Product>> Getuser(int Id)
-    {
-        try
-        {
-            return await  _context.Products.FindAsync(Id);
         }
+            
+        
 
-        catch (Exception ex)
-        {
-            _logger.LogError($"Failed to get products: {ex}");
-            return BadRequest("failed to get products");
-        }
     }
 }
 
 
-}
+
 
 
 
